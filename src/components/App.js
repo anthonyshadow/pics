@@ -16,7 +16,7 @@ class App extends React.Component {
   //helper function to search the api
   
   onSearchSubmit = term => {
-    unsplash.get('/search/photos', {
+    unsplash.get('/search/photos?page=1&per_page=30', {
       params: { query: term}     
    }).then((response) => {
      this.setState({ images: response.data.results})
